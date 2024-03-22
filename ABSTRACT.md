@@ -1,5 +1,26 @@
+The authors create a large and publicly-available **Trash-ICRA19: A Bounding Box Labeled Dataset of Underwater Trash** of actual debris in open-water locations is annotated for training a number of convolutional neural network architectures for object detection. This data was sourced from the [J-EDI](https://www.godac.jamstec.go.jp/dsdebris/e/index.html) dataset of marine debris. The videos that comprise that dataset vary greatly in quality, depth, objects in scenes, and the cameras used. They contain images of many different types of marine debris, captured from real-world environments, providing a variety of objects in different states of decay, occlusion, and overgrowth. Additionally, the clarity of the water and quality of the light vary significantly from video to video. These videos were processed to extract 5,700 images, which comprise this dataset, all labeled with bounding boxes on instances of *plastic* trash, biological objects such as plants and animals(*bio*), and *rov*. 
 
-Sample image template:
-<img src="https://github.com/dataset-ninja/gland-segmentation/assets/78355358/f158d0dd-71d5-41a2-aba5-4a5f57d54c35" alt="image" width="800">
+## Motivation
 
-<span style="font-size: smaller; font-style: italic;">Image description.</span>
+Marine debris poses a growing threat to the health of our planet. Beginning its life as discarded fishing gear, improperly recycled packaging, or simply discarded plastic grocery bags and soda bottles, marine debris makes its way into the ocean or another body of water by a number of means and remains there. There is virtually no place on earth that is unpolluted by marine debris, which kills and injures aquatic life, chokes ecosystems, and contaminates the water. Recycling and other efforts to keep debris out of the ocean have had limited impact. The vast amount of trash already in the ocean must somehow be removed. Despite the importance of this problem, there are few large-scale efforts attempting to combat it, due in part to the manpower required. The, 
+authors propose that a key element of an effective strategy for removing debris from marine environments is by using autonomous underwater vehicles (AUVs) to
+implement a trash detection and removal mechanism. They examine the problem of detecting debris, particularly plastic debris, in an underwater environment, the first of a set of capabilities needed for such AUVs. They consider a number of deep learning-based visual object detection algorithms, build a dataset to train and evaluate them on. 
+
+Detecting marine debris solely through visual observation poses significant challenges. Like many object detection tasks relying on visual cues, slight alterations in the surroundings can drastically alter an object's appearance, particularly in underwater environments. Changes in lighting conditions, especially in shallower waters, and fluctuations in water turbidity can obscure or entirely conceal objects. Moreover, marine debris seldom maintains its original condition, often deteriorating over time, necessitating detectors capable of identifying various types of trash under any circumstances. Compounding the challenge is the sheer diversity of objects classified as marine debris, even within the subset of plastic materials, which is the primary focus due to its prevalence and ecological impact. To address this monumental task of detecting all forms of marine litter, the authors initial focus is on identifying plastic, a ubiquitous and highly detrimental type of debris found in today's oceans.
+
+<img src="https://github.com/dataset-ninja/trash-icra19/assets/120389559/d0ab29ec-3a25-438f-beb3-09366a7029ce" alt="image" width="500">
+
+<span style="font-size: smaller; font-style: italic;">Examples of plastic and other refuse material in various marine environments. (a) A plastic bottle lying on the sea floor off the coast of Barbados; image collected by the authors, January 2018. (b) A beverage can on the sea bed off the coast of Japan, taken from the J-EDI dataset.</span>
+
+## Dataset description
+
+The dataset utilized in this study was obtained from the J-EDI dataset focusing on marine debris. The videos within this dataset exhibit considerable diversity in terms of quality, depth, scenes, and the cameras employed. They feature a wide array of marine debris types captured in authentic environments, presenting objects in various stages of degradation, obstruction, and overgrowth. Furthermore, the water clarity and lighting conditions vary significantly across different videos, enabling the creation of a training dataset that closely mirrors real-world scenarios, unlike previous studies that predominantly rely on artificially generated datasets. For training purposes, the authors extracted data from videos labeled as containing debris spanning from 2000 to 2017. From this subset, videos containing plastic debris were specifically selected, partly to streamline the dataset for practical use and also due to the critical importance of plastic as a type of marine debris. Subsequently, each video was sampled at a rate of three frames per second to generate images suitable for annotation in preparation for model training. This sampling process yielded over 240,000 frames, from which the most representative examples of plastic marine debris were identified and annotated. The final training dataset comprises 5,720 images, each with dimensions of 480x320 pixels.
+
+<img src="https://github.com/dataset-ninja/trash-icra19/assets/120389559/089c4346-ed36-4ab1-af04-80027ce8a6b3" alt="image" width="500">
+
+<span style="font-size: smaller; font-style: italic;">Example labeled image.</span>
+
+Dataset has three classes, defined as follows:
+* *plastic*: Marine debris, all plastic materials.
+* *rov*: All man-made objects(i.e., ROV, permanent sensors, etc), intentionally placed in the environment.
+* *bio*: All natural biological material, including fish, plants, and biological detritus.
