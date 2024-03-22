@@ -8,7 +8,7 @@ implement a trash detection and removal mechanism. They examine the problem of d
 
 Detecting marine debris solely through visual observation poses significant challenges. Like many object detection tasks relying on visual cues, slight alterations in the surroundings can drastically alter an object's appearance, particularly in underwater environments. Changes in lighting conditions, especially in shallower waters, and fluctuations in water turbidity can obscure or entirely conceal objects. Moreover, marine debris seldom maintains its original condition, often deteriorating over time, necessitating detectors capable of identifying various types of trash under any circumstances. Compounding the challenge is the sheer diversity of objects classified as marine debris, even within the subset of plastic materials, which is the primary focus due to its prevalence and ecological impact. To address this monumental task of detecting all forms of marine litter, the authors initial focus is on identifying plastic, a ubiquitous and highly detrimental type of debris found in today's oceans.
 
-<img src="https://github.com/dataset-ninja/trash-icra19/assets/120389559/d0ab29ec-3a25-438f-beb3-09366a7029ce" alt="image" width="500">
+<img src="https://github.com/dataset-ninja/trash-icra19/assets/120389559/d0ab29ec-3a25-438f-beb3-09366a7029ce" alt="image" width="800">
 
 <span style="font-size: smaller; font-style: italic;">Examples of plastic and other refuse material in various marine environments. (a) A plastic bottle lying on the sea floor off the coast of Barbados; image collected by the authors, January 2018. (b) A beverage can on the sea bed off the coast of Japan, taken from the J-EDI dataset.</span>
 
