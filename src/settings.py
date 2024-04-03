@@ -15,7 +15,7 @@ from dataset_tools.templates import (
 ##################################
 PROJECT_NAME: str = "Trash-ICRA19"
 PROJECT_NAME_FULL: str = "Trash-ICRA19: A Bounding Box Labeled Dataset of Underwater Trash"
-HIDE_DATASET = True  # set False when 100% sure about repo quality
+HIDE_DATASET = False  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
